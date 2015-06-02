@@ -1,0 +1,1029 @@
+@prefix : <http://www.metadataregistry.org.uk/assets/schema/1.0/metadataregistry.xsd#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dtype: <http://www.srdc.com.tr/ontmalizer#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Classification a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x1 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :measurementUnit .
+
+:Classification rdfs:subClassOf _:node19mpede06x1 .
+
+_:node19mpede06x2 a owl:Restriction ;
+	owl:allValuesFrom :MeasurementUnit ;
+	owl:onProperty :measurementUnit .
+
+:Classification rdfs:subClassOf _:node19mpede06x2 .
+
+_:node19mpede06x3 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :dataType .
+
+:Classification rdfs:subClassOf _:node19mpede06x3 .
+
+_:node19mpede06x4 a owl:Restriction ;
+	owl:allValuesFrom :DataType ;
+	owl:onProperty :dataType .
+
+:Classification rdfs:subClassOf _:node19mpede06x4 .
+
+_:node19mpede06x5 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :valueDomain .
+
+:Classification rdfs:subClassOf _:node19mpede06x5 .
+
+_:node19mpede06x6 a owl:Restriction ;
+	owl:allValuesFrom :ValueDomain ;
+	owl:onProperty :valueDomain .
+
+:Classification rdfs:subClassOf _:node19mpede06x6 .
+
+_:node19mpede06x7 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :dataElement .
+
+:Classification rdfs:subClassOf _:node19mpede06x7 .
+
+_:node19mpede06x8 a owl:Restriction ;
+	owl:allValuesFrom :DataElement ;
+	owl:onProperty :dataElement .
+
+:Classification rdfs:subClassOf _:node19mpede06x8 .
+
+_:node19mpede06x9 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :model .
+
+:Classification rdfs:subClassOf _:node19mpede06x9 .
+
+_:node19mpede06x10 a owl:Restriction ;
+	owl:allValuesFrom :Model ;
+	owl:onProperty :model .
+
+:Classification rdfs:subClassOf _:node19mpede06x10 .
+
+_:node19mpede06x11 a owl:Restriction ;
+	owl:maxCardinality "2147483647"^^xsd:int ;
+	owl:onProperty :globalSearchFor .
+
+:Classification rdfs:subClassOf _:node19mpede06x11 .
+
+_:node19mpede06x12 a owl:Restriction ;
+	owl:minCardinality "0"^^xsd:int ;
+	owl:onProperty :globalSearchFor .
+
+:Classification rdfs:subClassOf _:node19mpede06x12 .
+
+_:node19mpede06x13 a owl:Restriction ;
+	owl:allValuesFrom :CatalogueElementTypeDatatype ;
+	owl:onProperty :globalSearchFor .
+
+:Classification rdfs:subClassOf _:node19mpede06x13 .
+
+:measurementUnit a owl:ObjectProperty .
+
+:unitOfMeasure a owl:ObjectProperty .
+
+:Extensions a owl:Class .
+
+_:node19mpede06x14 a owl:Restriction ;
+	owl:maxCardinality "2147483647"^^xsd:int ;
+	owl:onProperty :extension .
+
+:Extensions rdfs:subClassOf _:node19mpede06x14 .
+
+_:node19mpede06x15 a owl:Restriction ;
+	owl:minCardinality "1"^^xsd:int ;
+	owl:onProperty :extension .
+
+:Extensions rdfs:subClassOf _:node19mpede06x15 .
+
+_:node19mpede06x16 a owl:Restriction ;
+	owl:allValuesFrom :Extension ;
+	owl:onProperty :extension .
+
+:Extensions rdfs:subClassOf _:node19mpede06x16 .
+
+:KnownRelationshipTypes a owl:Class ;
+	rdfs:subClassOf :Name , dtype:EnumeratedValue .
+
+_:node19mpede06x17 rdf:first :KnownRelationshipTypes_containment ;
+	rdf:rest _:node19mpede06x18 .
+
+_:node19mpede06x18 rdf:first :KnownRelationshipTypes_base ;
+	rdf:rest _:node19mpede06x19 .
+
+_:node19mpede06x19 rdf:first :KnownRelationshipTypes_hierarchy ;
+	rdf:rest _:node19mpede06x20 .
+
+_:node19mpede06x20 rdf:first :KnownRelationshipTypes_relatedTo ;
+	rdf:rest _:node19mpede06x21 .
+
+_:node19mpede06x21 rdf:first :KnownRelationshipTypes_synonym ;
+	rdf:rest _:node19mpede06x22 .
+
+_:node19mpede06x22 rdf:first :KnownRelationshipTypes_favourite ;
+	rdf:rest _:node19mpede06x23 .
+
+_:node19mpede06x23 rdf:first :KnownRelationshipTypes_classification ;
+	rdf:rest rdf:nil .
+
+:KnownRelationshipTypes owl:oneOf _:node19mpede06x17 .
+
+:extension a owl:ObjectProperty .
+
+:valueDomain a owl:ObjectProperty .
+
+:to a owl:ObjectProperty .
+
+:dataElement a owl:ObjectProperty .
+
+:JavaClassDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string .
+
+_:node19mpede06x24 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+_:node19mpede06x26 xsd:pattern "([\\p{L}_$][\\p{L}\\p{N}_$]*\\.)*[\\p{L}_$][\\p{L}\\p{N}_$]*" .
+
+_:node19mpede06x25 rdf:first _:node19mpede06x26 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x24 owl:withRestrictions _:node19mpede06x25 .
+
+:JavaClassDatatype owl:equivalentClass _:node19mpede06x24 .
+
+:Catalogue a owl:Class .
+
+_:node19mpede06x27 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :classification .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x27 .
+
+_:node19mpede06x28 a owl:Restriction ;
+	owl:allValuesFrom :Classification ;
+	owl:onProperty :classification .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x28 .
+
+_:node19mpede06x29 a owl:Restriction ;
+	owl:maxCardinality "2147483647"^^xsd:int ;
+	owl:onProperty :createAutomatically .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x29 .
+
+_:node19mpede06x30 a owl:Restriction ;
+	owl:minCardinality "0"^^xsd:int ;
+	owl:onProperty :createAutomatically .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x30 .
+
+_:node19mpede06x31 a owl:Restriction ;
+	owl:allValuesFrom :CatalogueElementTypeDatatype ;
+	owl:onProperty :createAutomatically .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x31 .
+
+_:node19mpede06x32 a owl:Restriction ;
+	owl:allValuesFrom :Model ;
+	owl:onProperty :model .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x32 .
+
+_:node19mpede06x33 a owl:Restriction ;
+	owl:allValuesFrom :MeasurementUnit ;
+	owl:onProperty :measurementUnit .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x33 .
+
+_:node19mpede06x34 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :dataType .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x34 .
+
+_:node19mpede06x35 a owl:Restriction ;
+	owl:allValuesFrom :DataType ;
+	owl:onProperty :dataType .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x35 .
+
+_:node19mpede06x36 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :valueDomain .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x36 .
+
+_:node19mpede06x37 a owl:Restriction ;
+	owl:allValuesFrom :ValueDomain ;
+	owl:onProperty :valueDomain .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x37 .
+
+_:node19mpede06x38 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :dataElement .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x38 .
+
+_:node19mpede06x39 a owl:Restriction ;
+	owl:allValuesFrom :DataElement ;
+	owl:onProperty :dataElement .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x39 .
+
+_:node19mpede06x40 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :model .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x40 .
+
+_:node19mpede06x41 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :measurementUnit .
+
+:Catalogue rdfs:subClassOf _:node19mpede06x41 .
+
+:synonym a owl:ObjectProperty .
+
+:DataType a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x42 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :enumerations .
+
+:DataType rdfs:subClassOf _:node19mpede06x42 .
+
+_:node19mpede06x43 a owl:Restriction ;
+	owl:allValuesFrom :Enumerations ;
+	owl:onProperty :enumerations .
+
+:DataType rdfs:subClassOf _:node19mpede06x43 .
+
+:basedOn a owl:ObjectProperty .
+
+:KnownCatalogueElementType_Enumeration a dtype:Enumeration ;
+	dtype:hasValue :KnownCatalogueElementType_measurementUnit , :KnownCatalogueElementType_model , :KnownCatalogueElementType_classification , :KnownCatalogueElementType_valueDomain , :KnownCatalogueElementType_dataType , :KnownCatalogueElementType_dataElement .
+
+:key a owl:DatatypeProperty .
+
+:RuleDatatype a rdfs:Datatype ;
+	rdfs:subClassOf :PreservedStringDatatype .
+
+_:node19mpede06x44 a rdfs:Datatype ;
+	owl:onDatatype :PreservedStringDatatype .
+
+_:node19mpede06x46 xsd:maxLength "10000" .
+
+_:node19mpede06x45 rdf:first _:node19mpede06x46 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x44 owl:withRestrictions _:node19mpede06x45 .
+
+:RuleDatatype owl:equivalentClass _:node19mpede06x44 .
+
+:dataType a owl:ObjectProperty .
+
+:KnownRelationshipTypes_base a :KnownRelationshipTypes ;
+	dtype:hasValue "base"^^xsd:Name .
+
+:KnownCatalogueElementTypeDatatype a rdfs:Datatype ;
+	rdfs:subClassOf :NameDatatype .
+
+_:node19mpede06x47 a rdfs:Datatype ;
+	owl:onDatatype :NameDatatype .
+
+:KnownCatalogueElementTypeDatatype owl:equivalentClass _:node19mpede06x47 .
+
+:KnownRelationshipTypes_hierarchy a :KnownRelationshipTypes ;
+	dtype:hasValue "hierarchy"^^xsd:Name .
+
+dtype:Enumeration a owl:Class .
+
+:regex a owl:DatatypeProperty .
+
+:CatalogueElementTypeDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:anySimpleType .
+
+_:node19mpede06x48 a rdfs:Datatype ;
+	owl:onDatatype xsd:anySimpleType .
+
+:CatalogueElementTypeDatatype owl:equivalentClass _:node19mpede06x48 .
+
+:PreservedStringDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string .
+
+_:node19mpede06x49 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+_:node19mpede06x51 xsd:whiteSpace "preserve" .
+
+_:node19mpede06x50 rdf:first _:node19mpede06x51 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x49 owl:withRestrictions _:node19mpede06x50 .
+
+:PreservedStringDatatype owl:equivalentClass _:node19mpede06x49 .
+
+:description a owl:DatatypeProperty .
+
+:relatedTo a owl:ObjectProperty .
+
+:extensions a owl:ObjectProperty .
+
+:DataElement a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x52 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :valueDomain .
+
+:DataElement rdfs:subClassOf _:node19mpede06x52 .
+
+_:node19mpede06x53 a owl:Restriction ;
+	owl:allValuesFrom :ValueDomain ;
+	owl:onProperty :valueDomain .
+
+:DataElement rdfs:subClassOf _:node19mpede06x53 .
+
+:Name a owl:Class .
+
+:createAutomatically a owl:DatatypeProperty .
+
+:DescriptionDatatype a rdfs:Datatype ;
+	rdfs:subClassOf :PreservedStringDatatype .
+
+_:node19mpede06x54 a rdfs:Datatype ;
+	owl:onDatatype :PreservedStringDatatype .
+
+_:node19mpede06x56 xsd:maxLength "2000" .
+
+_:node19mpede06x55 rdf:first _:node19mpede06x56 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x54 owl:withRestrictions _:node19mpede06x55 .
+
+:DescriptionDatatype owl:equivalentClass _:node19mpede06x54 .
+
+:Enumerations a owl:Class .
+
+_:node19mpede06x57 a owl:Restriction ;
+	owl:maxCardinality "2147483647"^^xsd:int ;
+	owl:onProperty :enumeration .
+
+:Enumerations rdfs:subClassOf _:node19mpede06x57 .
+
+_:node19mpede06x58 a owl:Restriction ;
+	owl:minCardinality "1"^^xsd:int ;
+	owl:onProperty :enumeration .
+
+:Enumerations rdfs:subClassOf _:node19mpede06x58 .
+
+_:node19mpede06x59 a owl:Restriction ;
+	owl:allValuesFrom :Enumeration ;
+	owl:onProperty :enumeration .
+
+:Enumerations rdfs:subClassOf _:node19mpede06x59 .
+
+:Model a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x60 a owl:Restriction ;
+	owl:allValuesFrom :Model ;
+	owl:onProperty :model .
+
+:Model rdfs:subClassOf _:node19mpede06x60 .
+
+_:node19mpede06x61 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :dataElement .
+
+:Model rdfs:subClassOf _:node19mpede06x61 .
+
+_:node19mpede06x62 a owl:Restriction ;
+	owl:allValuesFrom :DataElement ;
+	owl:onProperty :dataElement .
+
+:Model rdfs:subClassOf _:node19mpede06x62 .
+
+_:node19mpede06x63 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :model .
+
+:Model rdfs:subClassOf _:node19mpede06x63 .
+
+:type a owl:DatatypeProperty .
+
+:relationshipType a owl:DatatypeProperty .
+
+:ValueDomain a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x64 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty :regex .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x64 .
+
+_:node19mpede06x65 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :rule .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x65 .
+
+_:node19mpede06x66 a owl:Restriction ;
+	owl:allValuesFrom :RuleDatatype ;
+	owl:onProperty :rule .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x66 .
+
+_:node19mpede06x67 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :dataType .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x67 .
+
+_:node19mpede06x68 a owl:Restriction ;
+	owl:allValuesFrom :DataType ;
+	owl:onProperty :dataType .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x68 .
+
+_:node19mpede06x69 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :unitOfMeasure .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x69 .
+
+_:node19mpede06x70 a owl:Restriction ;
+	owl:allValuesFrom :MeasurementUnit ;
+	owl:onProperty :unitOfMeasure .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x70 .
+
+_:node19mpede06x71 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :regex .
+
+:ValueDomain rdfs:subClassOf _:node19mpede06x71 .
+
+:Relationships a owl:Class .
+
+_:node19mpede06x72 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :to .
+
+:Relationships rdfs:subClassOf _:node19mpede06x72 .
+
+_:node19mpede06x73 a owl:Restriction ;
+	owl:allValuesFrom :Relationship ;
+	owl:onProperty :to .
+
+:Relationships rdfs:subClassOf _:node19mpede06x73 .
+
+_:node19mpede06x74 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :from .
+
+:Relationships rdfs:subClassOf _:node19mpede06x74 .
+
+_:node19mpede06x75 a owl:Restriction ;
+	owl:allValuesFrom :Relationship ;
+	owl:onProperty :from .
+
+:Relationships rdfs:subClassOf _:node19mpede06x75 .
+
+:StatusDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string , :Status .
+
+_:node19mpede06x76 a rdfs:Datatype ;
+	owl:onDatatype :Status .
+
+:StatusDatatype owl:equivalentClass _:node19mpede06x76 .
+
+_:node19mpede06x77 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+:StatusDatatype owl:equivalentClass _:node19mpede06x77 .
+
+:IDDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:anyURI .
+
+_:node19mpede06x78 a rdfs:Datatype ;
+	owl:onDatatype xsd:anyURI .
+
+_:node19mpede06x80 xsd:pattern "https?://.*" .
+
+_:node19mpede06x79 rdf:first _:node19mpede06x80 ;
+	rdf:rest _:node19mpede06x81 .
+
+_:node19mpede06x82 xsd:minLength "1"^^xsd:anyURI .
+
+_:node19mpede06x81 rdf:first _:node19mpede06x82 ;
+	rdf:rest _:node19mpede06x83 .
+
+_:node19mpede06x84 xsd:maxLength "255"^^xsd:anyURI .
+
+_:node19mpede06x83 rdf:first _:node19mpede06x84 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x78 owl:withRestrictions _:node19mpede06x79 .
+
+:IDDatatype owl:equivalentClass _:node19mpede06x78 .
+
+:Status_FINALIZED a :Status ;
+	dtype:hasValue "FINALIZED" .
+
+:name a owl:DatatypeProperty .
+
+:KnownRelationshipTypes_relatedTo a :KnownRelationshipTypes ;
+	dtype:hasValue "relatedTo"^^xsd:Name .
+
+:Extension a owl:Class .
+
+_:node19mpede06x85 a owl:Restriction ;
+	owl:allValuesFrom :ExtensionValueDatatype ;
+	owl:onProperty dtype:hasValue .
+
+:Extension rdfs:subClassOf _:node19mpede06x85 .
+
+_:node19mpede06x86 a owl:Restriction ;
+	owl:allValuesFrom :ExtensionKeyDatatype ;
+	owl:onProperty :key .
+
+:Extension rdfs:subClassOf _:node19mpede06x86 .
+
+_:node19mpede06x87 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :key .
+
+:Extension rdfs:subClassOf _:node19mpede06x87 .
+
+_:node19mpede06x88 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty dtype:hasValue .
+
+:Extension rdfs:subClassOf _:node19mpede06x88 .
+
+:Status_DEPRECATED a :Status ;
+	dtype:hasValue "DEPRECATED" .
+
+:NameDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string .
+
+_:node19mpede06x89 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+_:node19mpede06x91 xsd:minLength "1" .
+
+_:node19mpede06x90 rdf:first _:node19mpede06x91 ;
+	rdf:rest _:node19mpede06x92 .
+
+_:node19mpede06x93 xsd:maxLength "255" .
+
+_:node19mpede06x92 rdf:first _:node19mpede06x93 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x89 owl:withRestrictions _:node19mpede06x90 .
+
+:NameDatatype owl:equivalentClass _:node19mpede06x89 .
+
+:rule a owl:DatatypeProperty .
+
+:KnownCatalogueElementType_dataType a :KnownCatalogueElementType ;
+	dtype:hasValue "dataType"^^xsd:Name .
+
+:symbol a owl:DatatypeProperty .
+
+:value a owl:DatatypeProperty .
+
+:KnownCatalogueElementType_measurementUnit a :KnownCatalogueElementType ;
+	dtype:hasValue "measurementUnit"^^xsd:Name .
+
+:Status_DRAFT a :Status ;
+	dtype:hasValue "DRAFT" .
+
+:globalSearchFor a owl:DatatypeProperty .
+
+:KnownCatalogueElementType_valueDomain a :KnownCatalogueElementType ;
+	dtype:hasValue "valueDomain"^^xsd:Name .
+
+:KnownRelationshipTypesDatatype a rdfs:Datatype ;
+	rdfs:subClassOf :NameDatatype .
+
+_:node19mpede06x94 a rdfs:Datatype ;
+	owl:onDatatype :NameDatatype .
+
+:KnownRelationshipTypesDatatype owl:equivalentClass _:node19mpede06x94 .
+
+:KnownCatalogueElementType_dataElement a :KnownCatalogueElementType ;
+	dtype:hasValue "dataElement"^^xsd:Name .
+
+:from a owl:ObjectProperty .
+
+:model a owl:ObjectProperty .
+
+:Relationship a owl:Class ;
+	rdfs:subClassOf :Reference .
+
+_:node19mpede06x95 a owl:Restriction ;
+	owl:allValuesFrom :RelationshipTypeDatatype ;
+	owl:onProperty :relationshipType .
+
+:Relationship rdfs:subClassOf _:node19mpede06x95 .
+
+_:node19mpede06x96 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :relationshipType .
+
+:Relationship rdfs:subClassOf _:node19mpede06x96 .
+
+:catalogue a owl:Class ;
+	rdfs:subClassOf :Catalogue .
+
+:ExtensionValueDatatype a rdfs:Datatype ;
+	rdfs:subClassOf :PreservedStringDatatype .
+
+_:node19mpede06x97 a rdfs:Datatype ;
+	owl:onDatatype :PreservedStringDatatype .
+
+_:node19mpede06x99 xsd:maxLength "2000" .
+
+_:node19mpede06x98 rdf:first _:node19mpede06x99 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x97 owl:withRestrictions _:node19mpede06x98 .
+
+:ExtensionValueDatatype owl:equivalentClass _:node19mpede06x97 .
+
+:KnownRelationshipTypes_Enumeration a dtype:Enumeration ;
+	dtype:hasValue :KnownRelationshipTypes_base , :KnownRelationshipTypes_hierarchy , :KnownRelationshipTypes_synonym , :KnownRelationshipTypes_relatedTo , :KnownRelationshipTypes_favourite , :KnownRelationshipTypes_classification , :KnownRelationshipTypes_containment .
+
+:KnownCatalogueElementType_classification a :KnownCatalogueElementType ;
+	dtype:hasValue "classification"^^xsd:Name .
+
+:RelationshipTypeDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:anySimpleType .
+
+_:node19mpede06x100 a rdfs:Datatype ;
+	owl:onDatatype xsd:anySimpleType .
+
+:RelationshipTypeDatatype owl:equivalentClass _:node19mpede06x100 .
+
+:status a owl:DatatypeProperty .
+
+:metadata a owl:ObjectProperty .
+
+:KnownRelationshipTypes_containment a :KnownRelationshipTypes ;
+	dtype:hasValue "containment"^^xsd:Name .
+
+:relationships a owl:ObjectProperty .
+
+:Enumeration a owl:Class .
+
+_:node19mpede06x101 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty dtype:hasValue .
+
+:Enumeration rdfs:subClassOf _:node19mpede06x101 .
+
+_:node19mpede06x102 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty dtype:hasValue .
+
+:Enumeration rdfs:subClassOf _:node19mpede06x102 .
+
+_:node19mpede06x103 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :value .
+
+:Enumeration rdfs:subClassOf _:node19mpede06x103 .
+
+_:node19mpede06x104 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty :value .
+
+:Enumeration rdfs:subClassOf _:node19mpede06x104 .
+
+:enumeration a owl:ObjectProperty .
+
+dtype:EnumeratedValue a owl:Class .
+
+:CatalogueElement a owl:Class ;
+	rdfs:comment """CatalogueElement is either a in-lined definition of the element or a reference to the existing element.
+                If \"ref\" attribute is set, any other attributes or nested elements are ignored.""" ;
+	rdfs:subClassOf :Reference .
+
+_:node19mpede06x105 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :relationships .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x105 .
+
+_:node19mpede06x106 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :id .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x106 .
+
+_:node19mpede06x107 a owl:Restriction ;
+	owl:allValuesFrom :IDDatatype ;
+	owl:onProperty :id .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x107 .
+
+_:node19mpede06x108 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :status .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x108 .
+
+_:node19mpede06x109 a owl:Restriction ;
+	owl:allValuesFrom :Extensions ;
+	owl:onProperty :extensions .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x109 .
+
+_:node19mpede06x110 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :extensions .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x110 .
+
+_:node19mpede06x111 a owl:Restriction ;
+	owl:allValuesFrom :Relationships ;
+	owl:onProperty :relationships .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x111 .
+
+_:node19mpede06x112 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :description .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x112 .
+
+_:node19mpede06x113 a owl:Restriction ;
+	owl:allValuesFrom :Reference ;
+	owl:onProperty :basedOn .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x113 .
+
+_:node19mpede06x114 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :basedOn .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x114 .
+
+_:node19mpede06x115 a owl:Restriction ;
+	owl:allValuesFrom :Reference ;
+	owl:onProperty :relatedTo .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x115 .
+
+_:node19mpede06x116 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :relatedTo .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x116 .
+
+_:node19mpede06x117 a owl:Restriction ;
+	owl:allValuesFrom :Reference ;
+	owl:onProperty :synonym .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x117 .
+
+_:node19mpede06x118 a owl:Restriction ;
+	owl:cardinality "1"^^xsd:int ;
+	owl:onProperty :synonym .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x118 .
+
+_:node19mpede06x119 a owl:Restriction ;
+	owl:allValuesFrom :StatusDatatype ;
+	owl:onProperty :status .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x119 .
+
+_:node19mpede06x120 a owl:Restriction ;
+	owl:allValuesFrom :DescriptionDatatype ;
+	owl:onProperty :description .
+
+:CatalogueElement rdfs:subClassOf _:node19mpede06x120 .
+
+:SymbolDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string .
+
+_:node19mpede06x121 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+_:node19mpede06x123 xsd:minLength "1" .
+
+_:node19mpede06x122 rdf:first _:node19mpede06x123 ;
+	rdf:rest _:node19mpede06x124 .
+
+_:node19mpede06x125 xsd:maxLength "100" .
+
+_:node19mpede06x124 rdf:first _:node19mpede06x125 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x121 owl:withRestrictions _:node19mpede06x122 .
+
+:SymbolDatatype owl:equivalentClass _:node19mpede06x121 .
+
+:ExtensionKeyDatatype a rdfs:Datatype ;
+	rdfs:subClassOf xsd:string .
+
+_:node19mpede06x126 a rdfs:Datatype ;
+	owl:onDatatype xsd:string .
+
+_:node19mpede06x128 xsd:minLength "1" .
+
+_:node19mpede06x127 rdf:first _:node19mpede06x128 ;
+	rdf:rest _:node19mpede06x129 .
+
+_:node19mpede06x130 xsd:maxLength "255" .
+
+_:node19mpede06x129 rdf:first _:node19mpede06x130 ;
+	rdf:rest rdf:nil .
+
+_:node19mpede06x126 owl:withRestrictions _:node19mpede06x127 .
+
+:ExtensionKeyDatatype owl:equivalentClass _:node19mpede06x126 .
+
+:id a owl:DatatypeProperty .
+
+:ref a owl:DatatypeProperty .
+
+:href a owl:DatatypeProperty .
+
+:classification a owl:DatatypeProperty , owl:ObjectProperty .
+
+:KnownRelationshipTypes_classification a :KnownRelationshipTypes ;
+	dtype:hasValue "classification"^^xsd:Name .
+
+:KnownRelationshipTypes_favourite a :KnownRelationshipTypes ;
+	dtype:hasValue "favourite"^^xsd:Name .
+
+:enumerations a owl:ObjectProperty .
+
+:KnownRelationshipTypes_synonym a :KnownRelationshipTypes ;
+	dtype:hasValue "synonym"^^xsd:Name .
+
+:Status a owl:Class ;
+	rdfs:subClassOf dtype:EnumeratedValue .
+
+_:node19mpede06x131 a owl:Restriction ;
+	owl:allValuesFrom xsd:string ;
+	owl:onProperty dtype:hasValue .
+
+:Status rdfs:subClassOf _:node19mpede06x131 .
+
+_:node19mpede06x132 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty dtype:hasValue .
+
+:Status rdfs:subClassOf _:node19mpede06x132 .
+
+_:node19mpede06x133 rdf:first :Status_DRAFT ;
+	rdf:rest _:node19mpede06x134 .
+
+_:node19mpede06x134 rdf:first :Status_FINALIZED ;
+	rdf:rest _:node19mpede06x135 .
+
+_:node19mpede06x135 rdf:first :Status_DEPRECATED ;
+	rdf:rest rdf:nil .
+
+:Status owl:oneOf _:node19mpede06x133 .
+
+:KnownCatalogueElementType_model a :KnownCatalogueElementType ;
+	dtype:hasValue "model"^^xsd:Name .
+
+:KnownCatalogueElementType a owl:Class ;
+	rdfs:subClassOf :Name , dtype:EnumeratedValue .
+
+_:node19mpede06x136 rdf:first :KnownCatalogueElementType_classification ;
+	rdf:rest _:node19mpede06x137 .
+
+_:node19mpede06x137 rdf:first :KnownCatalogueElementType_model ;
+	rdf:rest _:node19mpede06x138 .
+
+_:node19mpede06x138 rdf:first :KnownCatalogueElementType_dataElement ;
+	rdf:rest _:node19mpede06x139 .
+
+_:node19mpede06x139 rdf:first :KnownCatalogueElementType_valueDomain ;
+	rdf:rest _:node19mpede06x140 .
+
+_:node19mpede06x140 rdf:first :KnownCatalogueElementType_dataType ;
+	rdf:rest _:node19mpede06x141 .
+
+_:node19mpede06x141 rdf:first :KnownCatalogueElementType_measurementUnit ;
+	rdf:rest rdf:nil .
+
+:KnownCatalogueElementType owl:oneOf _:node19mpede06x136 .
+
+:Status_Enumeration a dtype:Enumeration ;
+	dtype:hasValue :Status_DEPRECATED , :Status_DRAFT , :Status_FINALIZED .
+
+:MeasurementUnit a owl:Class ;
+	rdfs:subClassOf :CatalogueElement .
+
+_:node19mpede06x142 a owl:Restriction ;
+	owl:allValuesFrom :SymbolDatatype ;
+	owl:onProperty :symbol .
+
+:MeasurementUnit rdfs:subClassOf _:node19mpede06x142 .
+
+_:node19mpede06x143 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :symbol .
+
+:MeasurementUnit rdfs:subClassOf _:node19mpede06x143 .
+
+:Reference a owl:Class ;
+	rdfs:comment """The Reference can must always contain at least \"ref\" attribute or \"name\". If the \"classification\" is
+                provided the name will be searched only within this classification. Also if element of this type
+                is used inside element of type \"Classification\" it is assumed that the element should be searched by name
+                within the surrounding classification. This does not apply on elements having the \"ref\" attribute
+                provided. In that case the element is resolved by the ID. The type of the catalogue element can
+                be provided to distinguish between elements having same name and classification but different types
+                (this is quite common for value domains and it's data types)""" .
+
+_:node19mpede06x144 a owl:Restriction ;
+	owl:allValuesFrom :Extensions ;
+	owl:onProperty :metadata .
+
+:Reference rdfs:subClassOf _:node19mpede06x144 .
+
+_:node19mpede06x145 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :metadata .
+
+:Reference rdfs:subClassOf _:node19mpede06x145 .
+
+_:node19mpede06x146 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :name .
+
+:Reference rdfs:subClassOf _:node19mpede06x146 .
+
+_:node19mpede06x147 a owl:Restriction ;
+	owl:allValuesFrom :NameDatatype ;
+	owl:onProperty :name .
+
+:Reference rdfs:subClassOf _:node19mpede06x147 .
+
+_:node19mpede06x148 a owl:Restriction ;
+	owl:allValuesFrom :IDDatatype ;
+	owl:onProperty :href .
+
+:Reference rdfs:subClassOf _:node19mpede06x148 .
+
+_:node19mpede06x149 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :classification .
+
+:Reference rdfs:subClassOf _:node19mpede06x149 .
+
+_:node19mpede06x150 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :href .
+
+:Reference rdfs:subClassOf _:node19mpede06x150 .
+
+_:node19mpede06x151 a owl:Restriction ;
+	owl:allValuesFrom :NameDatatype ;
+	owl:onProperty :classification .
+
+:Reference rdfs:subClassOf _:node19mpede06x151 .
+
+_:node19mpede06x152 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :ref .
+
+:Reference rdfs:subClassOf _:node19mpede06x152 .
+
+_:node19mpede06x153 a owl:Restriction ;
+	owl:allValuesFrom :IDDatatype ;
+	owl:onProperty :ref .
+
+:Reference rdfs:subClassOf _:node19mpede06x153 .
+
+_:node19mpede06x154 a owl:Restriction ;
+	owl:maxCardinality "1"^^xsd:int ;
+	owl:onProperty :type .
+
+:Reference rdfs:subClassOf _:node19mpede06x154 .
+
+_:node19mpede06x155 a owl:Restriction ;
+	owl:allValuesFrom :CatalogueElementTypeDatatype ;
+	owl:onProperty :type .
+
+:Reference rdfs:subClassOf _:node19mpede06x155 .
